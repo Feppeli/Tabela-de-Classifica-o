@@ -1,25 +1,25 @@
 var Rafa = {        // criando o obeto Rafa
     nome: "Rafa",
-    vitórias: 2,
-    Empates:1,
-    derrotas:1,
+    vitórias: 0,
+    Empates:0,
+    derrotas:0,
     pontos: 0,
 }
 
 var Paulo = {       // criando o objeto Paulo
     nome: "Paulo",
-    vitórias: 1,
-    Empates: 1,
-    derrotas:2,
+    vitórias: 0,
+    Empates: 0,
+    derrotas:0,
     pontos: 0,
 }
 
 
 var Felipe = {       // criando o objeto Felipe
     nome: "Felipe",
-    vitórias: 3,
-    Empates: 2,
-    derrotas:1,
+    vitórias: 0,
+    Empates: 0,
+    derrotas:0,
     pontos: 0,
 }
 
@@ -34,10 +34,10 @@ Rafa.pontos = calculaPontos(Rafa);  //criando variáveis ligadas a uma function
 Paulo.pontos = calculaPontos(Paulo); //criando variáveis ligadas a uma function
 Felipe.pontos = calculaPontos(Felipe); //criando variáveis ligadas a uma function
 
-var jogadores = [Rafa, Paulo, Felipe]
+var jogadores = [Rafa, Paulo, Felipe] // váriavel para englobar os jogadores em uma lista
 
 
-function exibeJogadoresNaTela(jogadores){
+function exibeJogadoresNaTela(jogadores){ // função para imprimir no html os espaçoes e botões 
     var elemento = ""
     for (var i = 0; i < jogadores.length; i++) {
         elemento +=     "<tr><td>"+ jogadores[i].nome +"</td>";
@@ -56,23 +56,23 @@ function exibeJogadoresNaTela(jogadores){
 
 }
 
-exibeJogadoresNaTela(jogadores);
+exibeJogadoresNaTela(jogadores); // chamando a função para mostrar os itens da tabela e seus respectivos jogadores
 
-function adicionarVitoria(i) {
+function adicionarVitoria(i) {  // função criada para adicionar ponto no espaço vitória
     var jogador = jogadores[i];
     jogador.vitórias++;
     jogador.pontos = calculaPontos(jogador);
     exibeJogadoresNaTela(jogadores);
 }
 
-function adicionarDerrota(i){
+function adicionarDerrota(i){   // função criada para adicionar ponto no espaço Derrota
     var jogador = jogadores[i];
     jogador.derrotas++;
     jogador.pontos = calculaPontos(jogador);
     exibeJogadoresNaTela(jogadores);
 }
 
-function adicionarEmpate(i){
+function adicionarEmpate(i){    // função criada para adicionar ponto no espaço Empate
     var jogador = jogadores[i];
     jogador.Empates++;
     jogador.pontos = calculaPontos(jogador);
